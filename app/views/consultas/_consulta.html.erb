@@ -1,0 +1,22 @@
+<div id="<%= dom_id consulta %>">
+  <p>
+    <strong>Data:</strong>
+    <%= consulta.data %>
+  </p>
+
+  <p>
+    <strong>Horario:</strong>
+    <%= consulta.horario %>
+  </p>
+
+  <p>
+    <strong>Medico:</strong>
+    <%= Medico.find(consulta.medico_id).nome %>
+  </p>
+
+  <p>
+    <strong>Paciente:</strong>
+    <%= Paciente.find(consulta.paciente_id).nome %>
+  </p>
+
+</div>
