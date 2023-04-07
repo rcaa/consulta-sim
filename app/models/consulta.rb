@@ -4,7 +4,7 @@ class Consulta < ApplicationRecord
   belongs_to :paciente
 
   validates :data_consulta_futuro, presence: true
-  validate :horarios_validos, presence: true, uniqueness: true
+  validates :horarios_validos, presence: true, uniqueness: true
 
   def data_consulta_futuro
     if data.present? && data < Date.today
