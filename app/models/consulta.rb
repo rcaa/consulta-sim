@@ -3,8 +3,8 @@ class Consulta < ApplicationRecord
   belongs_to :medico
   belongs_to :paciente
 
-  validate :data_consulta_futuro
-  validate :horarios_validos
+  validates :data_consulta_futuro, presence: true
+  validate :horarios_validos, presence: true, uniqueness: true
 
   def data_consulta_futuro
     if data.present? && data < Date.today
