@@ -19,6 +19,9 @@ class Paciente < ApplicationRecord
   end
 
   def cpf_valido
+    if !cpf.present?
+      errors.add(:cpf, "não pode ficar em branco")
+    end
     if cpf.present? && !CPF.valid?(cpf)
       errors.add(:cpf, "formato ou numero errado")
     end

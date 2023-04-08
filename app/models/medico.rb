@@ -12,6 +12,9 @@ class Medico < ApplicationRecord
   validates :crm, presence: true, length: {in: 4..10}, numericality: {only_integer: true}
 
   def cpf_valido
+    if !cpf.present?
+      errors.add(:cpf, "não pode ficar em branco")
+    end
     if cpf.present? && !CPF.valid?(cpf)
       errors.add(:cpf, "formato ou numero errado")
     end

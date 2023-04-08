@@ -7,6 +7,9 @@ class Consulta < ApplicationRecord
   validate :horarios_validos
 
   def data_consulta_futuro
+    if !data.present?
+      errors.add(:data, "nao pode ficar em branco")
+    end
     if data.present? && data < Date.today
       errors.add(:data, "nao pode ser no passado")
     end
