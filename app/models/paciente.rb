@@ -10,6 +10,7 @@ class Paciente < ApplicationRecord
   validates :nome, presence: true, length: {in: 5..40}
   validate :data_nascimento_valida
   validate :cpf_valido
+  validates :cpf, uniqueness: true, presence: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def data_nascimento_valida
@@ -19,9 +20,6 @@ class Paciente < ApplicationRecord
   end
 
   def cpf_valido
-    if !cpf.present?
-      errors.add(:cpf, "não pode ficar em branco")
-    end
     if cpf.present? && !CPF.valid?(cpf)
       errors.add(:cpf, "formato ou numero errado")
     end
