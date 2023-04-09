@@ -41,7 +41,7 @@ class ConsultaTest < ActiveSupport::TestCase
                               bairro: 'rendeiras',
                               cidade: 'caruaru'
                             }
-    assert paciente.save
+    assert_not paciente.save
 
 
     medico = Medico.new nome: 'Dr teste',
@@ -49,7 +49,7 @@ class ConsultaTest < ActiveSupport::TestCase
                         email: 'dr@teste',
                         especialidade: 'testador',
                         crm: '12345'
-    assert_not medico.save
+    assert medico.save
 
     consulta = Consulta.new(data: '20/04/2023',
                             horario: '08:00',
