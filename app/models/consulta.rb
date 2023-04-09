@@ -3,6 +3,8 @@ class Consulta < ApplicationRecord
   belongs_to :medico
   belongs_to :paciente
 
+  validates :data, presence: true
+
   validate :data_consulta_futuro
   validate :horarios_validos
 
