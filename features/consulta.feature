@@ -7,10 +7,10 @@ Feature: Consulta
     Given eu estou na pagina de criar consulta
     When eu preencho os campos data '2023-05-05', horario '11:00',paciente 'Rodrigo' ,medico 'Ricardo'
     And eu clico em cadastrar nova consulta
-    Then eu vejo uma mensagem "consulta foi cadastrado com sucesso"
+    Then eu vejo uma mensagem "Consulta was successfully created."
 
-  Scenario: Criar uma consulta com horario não coberto pelo medico
+  Scenario: Criar uma consulta com data no passado
     Given eu estou na pagina de criar consulta
-    When eu preencho os campos data '2023-05-05', horario '12:00',paciente 'Rodrigo' ,medico 'Ricardo'
+    When eu preencho os campos data '2023-01-05', horario '08:00',paciente 'Rodrigo' ,medico 'Ricardo'
     And eu clico em cadastrar nova consulta
-    Then eu vejo uma mensagem "horario invalido"
+    Then eu vejo uma mensagem "nao pode ser no passado"
