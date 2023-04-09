@@ -1,9 +1,21 @@
 require "test_helper"
 
 class MedicoTest < ActiveSupport::TestCase
-  test 'criando medico corretamente' do
-    medico = Medico.new nome: 'Rodrigo Andrade', cpf: '706.508.980-01', email: 'rodrigo@rodrigo.com',
-                        especialidade: 'Reumatologista', crm: '123456'
-    assert medico.save
+  test 'Conta medico com CRM vazio' do
+    medico = Medico.new nome: 'dr teste',
+                        cpf: '12015559493',
+                        email: 'dr@teste.com',
+                        especialidade: 'testador',
+                        crm: ''
+    assert_not medico.save
+  end
+
+  test 'Criando conta de medico com email vazio' do
+    medico = Medico.new nome: 'dr teste',
+                        cpf: '12015559493',
+                        email: '',
+                        especialidade: 'testador',
+                        crm: '12345'
+    assert_not medico.save
   end
 end
