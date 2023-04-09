@@ -13,7 +13,7 @@ class PacienteTest < ActiveSupport::TestCase
                               bairro: 'rendeiras',
                               cidade: 'caruaru'
                             }
-    assert_not paciente.save
+    assert paciente.save
 
   end
 
