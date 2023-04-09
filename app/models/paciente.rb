@@ -8,8 +8,8 @@ class Paciente < ApplicationRecord
   has_many :medicos, through: :consultums
 
   validates :nome, presence: true, length: {in: 5..40}
-  validate :data_nascimento_valida
-  validate :cpf_valido
+  validates :data_nascimento, presence: true
+  validates :cpf, presence: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def data_nascimento_valida
