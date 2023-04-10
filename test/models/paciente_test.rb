@@ -31,6 +31,6 @@ class PacienteTest < ActiveSupport::TestCase
     enderecos.cidade = "Capoeiras"
 
     paciente.endereco = enderecos
-    assert_not paciente.save, "Criou paciente sem CPF"
+    assert_not paciente.save, "paciente sem CPF"
   end
 end
