@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :consultas
-  resources :medicos
-  resources :pacientes
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "home_page#index"
 
-  # Defines the root path route ("/")
-  root "consultas#index"
+  resources :pacientes do
+    resources :enderecos
+  end
+  resources :medicos
+  resources :consultas
 end
