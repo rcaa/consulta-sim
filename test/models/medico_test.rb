@@ -11,7 +11,7 @@ class MedicoTest < ActiveSupport::TestCase
     assert medico.valid?
     assert_empty medico.errors.details[:nome]
   end
-  
+
   #Para validar que o CPF do medico eh valido
   test 'cpf deve estar presente e ser válido' do
     medico = Medico.new(nome: 'João', cpf: '123.456.789-01', email: 'joao@example.com', especialidade: 'Oftalmologia', crm: 12345)
