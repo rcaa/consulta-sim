@@ -9,7 +9,7 @@ Feature: Consulta
     And paciente de nome 'Maria Lyvia', data_nascimento '25/03/2003', cpf '11697785425', email 'lyvia@gmail.com', logradouro 'Rua b', complemento 'rua', cep '55365-055', bairro 'bairro' e cidade 'Garanhuns'
     When eu preencho os campos de data '15/06/2023' e horario '15:00' e medico 'Rian' e paciente 'Maria Lyvia'
     And eu clico em angendar consulta
-    Then eu vejo a mensagem 'Consulta agendada com sucesso'
+    Then eu vejo a mensagem "Consulta agendada com sucesso"
 
   Scenario: Vizualizar consulta
     Given medico de nome 'Maria Lyvia', cpf '11697785425', email 'lyvia@gmail.com', especialidade 'Cardiologista' e crm '111111' existe
