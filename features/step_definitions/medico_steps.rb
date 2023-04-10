@@ -36,3 +36,4 @@ end
 Then('eu vejo uma mensagem que o medico foi cadastrado com sucesso') do
   expect(page).to have_content('Medico was successfully created.')
 end
+
