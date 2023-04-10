@@ -21,11 +21,7 @@ class ConsultasController < ApplicationController
 
   # POST /consultas or /consultas.json
   def create
-    @medico = Medico.find(consulta_params[:medico_id])
-    @paciente = Paciente.find(consulta_params[:paciente_id])
     @consulta = Consulta.new(consulta_params)
-    @medico.consultas << @consulta
-    @paciente.consultas << @consulta
 
     respond_to do |format|
       if @consulta.save
