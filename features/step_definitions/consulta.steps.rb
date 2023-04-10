@@ -18,10 +18,6 @@ When('eu preencho os campos de data {string} e horario {string} e medico {string
 
 end
 
-And('eu clico em angendar consulta') do
-  click_button 'Create Consulta'
-end
-
 Then('eu vejo a mensagem "Consulta agendada com sucesso"') do
   page.has_content?('Consulta agendada com sucesso')
 end

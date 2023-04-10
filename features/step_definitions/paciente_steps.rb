@@ -26,7 +26,7 @@ Given('paciente de nome {string}, data_nascimento {string}, cpf {string}, email 
   Paciente.create!(nome: nome, data_nascimento: data_nascimento, cpf: cpf, email: email, endereco_attributes: {logradouro: logradouro, complemento: complemento, cep: cep, bairro: bairro, cidade: cidade})
 end
 
-When('que eu esteja na tela de pacient') do
+When('que eu esteja na tela de paciente') do
   visit '/pacientes'
   expect(page).to have_content('Pacientes')
 end
