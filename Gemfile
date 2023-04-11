@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.2", ">= 7.0.2.2"
+gem "rails", "~> 7.0.2", "= 7.0.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -54,7 +54,7 @@ gem "ffi"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug"
 end
 
 group :development do
@@ -83,13 +83,11 @@ group :test do
   testing_gems
 end
 
-group :production do
+group :production, :actions do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
 
 group :actions do
-  gem 'pg'
-  gem 'activerecord-postgresql-adapter'
   testing_gems
 end
