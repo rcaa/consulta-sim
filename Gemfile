@@ -83,13 +83,16 @@ group :test do
   testing_gems
 end
 
-group :production do
+def postgres_gems
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
 end
 
+group :production do
+  postgres_gems
+end
+
 group :actions do
-  gem 'pg'
-  gem 'activerecord-postgresql-adapter'
+  postgres_gems
   testing_gems
 end
